@@ -80,7 +80,7 @@ const AboutMe = (props) => {
             speed={1}
             >
             <div className='skills'>
-                <span className='skillset-title'>Skillset</span>
+                <span className='skillset-title'>Experience</span>
                     <div className='skillset-body'>
                         <span className='skillset-title-content'>
                             Full Stack Development,
