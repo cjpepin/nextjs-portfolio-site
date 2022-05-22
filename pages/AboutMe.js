@@ -64,7 +64,7 @@ const AboutMe = (props) => {
 
     return (
     <>
-     <Parallax pages={5}>
+     <Parallax pages={4.5}>
         <ParallaxLayer
             className="layer1"
             style={{ width: '100%', height: '100%'}}
@@ -109,7 +109,7 @@ const AboutMe = (props) => {
             <div className="experience-wrapper">
                 <span className="projects-title" >Projects</span>
                 
-                <div  onClick={(e) => {
+                <div className="content-block" onClick={(e) => {
                         if(e.target.className == 'content'){
                             changeImage(plImgs, true)}}
                         }>
@@ -127,8 +127,9 @@ const AboutMe = (props) => {
                                 benefit or hurt the lifter's progress.`}
                         imgSrc={`./PowerProgressPics/${plImgs[plImg]}.png`}
                      />
-                     <span>Link: <a href="http://powerprogress.herokuapp.com/">PowerProgress</a> </span>
                 </div>
+                <span>Link: <a href="http://powerprogress.herokuapp.com/">PowerProgress</a> </span>
+
 
                 <div className="content-block" 
                         onClick={(e) => {
@@ -164,7 +165,7 @@ const AboutMe = (props) => {
             <div className="experience-wrapper">
                 <span className="projects-title">Game Development</span>
 
-                <div
+                <div className='content-block'
                     onClick={(e) => {
                         if(e.target.className == 'content'){
                             changeImage(plImgs, true)}}
@@ -203,8 +204,8 @@ const AboutMe = (props) => {
         <ParallaxLayer 
             className="layer5"
 
-            offset={3.5}
-            factor={1}
+            offset={2.8}
+            factor={0.5}
             speed={2}
             >
             <ContactMe />
