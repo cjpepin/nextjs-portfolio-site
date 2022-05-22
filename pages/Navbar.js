@@ -6,13 +6,13 @@ const NavBar = () => {
                 <p id="me">About</p>
             </button>
 
-            <button id="fd" className="nav-button">
+            {/* <button id="fd" className="nav-button">
                 <p id="fd">Flappy Dog</p>
             </button>
 
             <button id="dj" className="nav-button">
                 <p id="dj">Doogle Jump</p>
-            </button>
+            </button> */}
         </div>
     )
 }

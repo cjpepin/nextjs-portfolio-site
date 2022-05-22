@@ -20,11 +20,7 @@ const Project = (props) =>{
         content = <img 
             className='content'
             src={props.imgSrc} 
-            style={{
-                maxWidth: '50%',
-                objectFit: 'contain',
-                padding: '20px',
-                order: order[1]}} 
+            
             />
     }
 

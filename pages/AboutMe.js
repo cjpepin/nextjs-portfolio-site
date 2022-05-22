@@ -64,8 +64,9 @@ const AboutMe = (props) => {
 
     return (
     <>
-     <Parallax pages={4}>
+     <Parallax pages={5}>
         <ParallaxLayer
+            className="layer1"
             style={{ width: '100%', height: '100%'}}
             offset={0}
             speed={0.5}
@@ -74,7 +75,8 @@ const AboutMe = (props) => {
         </ParallaxLayer>
 
         <ParallaxLayer
-            style={{marginTop: '200px'}}
+            className="layer2"
+
             offset={0.9}
             factor={0.25}
             speed={1}
@@ -87,7 +89,7 @@ const AboutMe = (props) => {
                             Data Science, and 
                             starting Game Development
                         </span>
-                        <p>
+                        <p className='skillset-text'>
                             I am currently a senior working towards my Bachelors of Computer Science + Mathematics at Washington University 
                             in St. Louis. My current interests include full stack development in HTML, Javascript (React/React Native), C#, and
                             Python. I also have experience using MySQL and NoSQL database formats. Some of my more recent projects have 
@@ -98,6 +100,8 @@ const AboutMe = (props) => {
             </div>
         </ParallaxLayer>
         <ParallaxLayer 
+            className="layer3"
+
             offset={1}
             factor={0.5}
             speed={1.5}
@@ -151,11 +155,11 @@ const AboutMe = (props) => {
                 </div>
             </div>
         </ParallaxLayer>
-        <ParallaxLayer
+        <ParallaxLayer 
+            className="layer4"
             offset={2}
             factor={1}
             speed={2}
-            style={{marginTop: "-125vh"}}
             >
             <div className="experience-wrapper">
                 <span className="projects-title">Game Development</span>
@@ -196,8 +200,10 @@ const AboutMe = (props) => {
                 </div>
             </div>
             </ParallaxLayer>
-        <ParallaxLayer
-            offset={2.5}
+        <ParallaxLayer 
+            className="layer5"
+
+            offset={3.5}
             factor={1}
             speed={2}
             >
