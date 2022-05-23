@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 
 
 const ContactMe = () => {
-    const [name, setName] = useState(0);
-    const [email, setEmail] = useState(0);
-    const [email2, setEmail2] = useState(0);
-    const [content, setContent] = useState(0);
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [email2, setEmail2] = useState("");
+    const [content, setContent] = useState("");
 
     async function handleSubmit(e){
         e.preventDefault();
@@ -23,8 +23,9 @@ const ContactMe = () => {
             method: 'post',
             body: JSON.stringify(formData),
         })
-
-
+        alert("Message sent!");
+        location.reload();
+        
     }
     return(
         <>
@@ -35,6 +36,7 @@ const ContactMe = () => {
                     <input 
                         type="text" 
                         id="name" 
+                        placeholder={name}
                         className="contact-input"  
                         onChange={(e) => {
                             setName(e.target.value)
