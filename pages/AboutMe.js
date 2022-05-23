@@ -11,12 +11,13 @@ const AboutMe = (props) => {
     const alignCenter = { display: 'flex', alignItems: 'center' }
     const [plImg, setPlImg] = useState(0);
     const [gsImg, setGsImg] = useState(0);
-    const [djImg, setDgImg] = useState(0);
+    const [djImg, setDjImg] = useState(0);
     const [fdImg, setFdImg] = useState(0);
     const [name, setName] = useState();
     const plImgs = ['login', 'front', 'chart', 'chart2'];
     const gsImgs = ['pointB','topic','yesNo','sentDist','kde','general','ethics1','ethics2'];
-
+    const djImgs = ['Start', 'Play', 'Pause', 'Lose'];
+    const fdImgs = ['Start', 'Play', 'Pause', 'Lose'];
     // const [width, setWidth] = useState(window.innerHeight)
     // var fs = require('fs')
     // var files = fs.readdir('./PowerProgressPics')
@@ -58,6 +59,40 @@ const AboutMe = (props) => {
                     setGsImg(curInd - 1);
                 }
             }
+        }else if(imgsToUse == djImgs){
+            const curInd = imgsToUse.indexOf(imgsToUse[djImg])
+            if(add){
+                if(curInd == imgsToUse.length - 1){
+                    setDjImg(0);
+
+                }else{
+                    setDjImg(curInd + 1);
+                }
+            }else{
+
+                if(curInd == 0){
+                    setDjImg(imgsToUse.length - 1);
+                }else{
+                    setDjImg(curInd - 1);
+                }
+            }
+        }else if(imgsToUse == fdImgs){
+            const curInd = imgsToUse.indexOf(imgsToUse[fdImg])
+            if(add){
+                if(curInd == imgsToUse.length - 1){
+                    
+                    setFdImg(0);
+                }else{
+                    setFdImg(curInd + 1);
+                }
+            }else{
+
+                if(curInd == 0){
+                    setFdImg(imgsToUse.length - 1);
+                }else{
+                    setFdImg(curInd - 1);
+                }
+            }
         }
     }
     
@@ -70,7 +105,7 @@ const AboutMe = (props) => {
             style={{ width: '100%', height: '100%'}}
             offset={0}
             speed={0.5}
-            factor={0.5}>
+            factor={1}>
             <Intro />
         </ParallaxLayer>
 
@@ -128,7 +163,7 @@ const AboutMe = (props) => {
                         imgSrc={`./PowerProgressPics/${plImgs[plImg]}.png`}
                      />
                 </div>
-                <span>Link: <a href="http://powerprogress.herokuapp.com/">PowerProgress</a> </span>
+                <p className='bottom-content-note'>Link: <a href="http://powerprogress.herokuapp.com/">PowerProgress</a> </p>
 
 
                 <div className="content-block" 
@@ -154,6 +189,7 @@ const AboutMe = (props) => {
                     />
                     
                 </div>
+
             </div>
         </ParallaxLayer>
         <ParallaxLayer 
@@ -168,7 +204,7 @@ const AboutMe = (props) => {
                 <div className='content-block'
                     onClick={(e) => {
                         if(e.target.className == 'content'){
-                            changeImage(plImgs, true)}}
+                            changeImage(fdImgs, true)}}
                     }>
                     <Project 
                         ind={1}
@@ -180,14 +216,16 @@ const AboutMe = (props) => {
                                 Dog came first, except I wanted to practice making games work in 3D, so now there is a left and right component to it.
                                 I was extremely happy with how it ended up working after working through learning how to use 3D vectors to position
                                 elements. This ended up being a very fun game and entertaining to show to others."
-                        imgSrc={`./PowerProgressPics/${plImgs[plImg]}.png`}
+                        imgSrc={`./FlappyDogPics/${fdImgs[fdImg]}.png`}
                     />
                 </div>
+                <p className='bottom-content-note'>Browser playable version coming soon!</p>
+
                 <div 
                     className="content-block"
                     onClick={(e) => {
                         if(e.target.className == 'content'){
-                            changeImage(plImgs, true)}}
+                            changeImage(djImgs, true)}}
                     } >
                     <Project 
                         ind={2}
@@ -196,9 +234,11 @@ const AboutMe = (props) => {
                                 game still has a relatively similar level design, with a start menu, gameplay screen, and pause screen, but now has some 
                                 additional elements like adjutable volume, and different gameplay mechanics, like interaction with world objects, sound effects
                                 and camera changes."
-                        imgSrc={`./PowerProgressPics/${plImgs[plImg]}.png`}
+                        imgSrc={`./DoogleJumpPics/${djImgs[djImg]}.png`}
                     />
                 </div>
+                <p className='bottom-content-note'>Browser playable version coming soon!</p>
+
             </div>
             </ParallaxLayer>
         <ParallaxLayer 

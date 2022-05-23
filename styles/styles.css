@@ -35,7 +35,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 5%;
+    margin-top: 20vh;
 }
 
 .about-me{
@@ -158,6 +158,9 @@
     justify-content: center;
     margin-top: 100px;
 }
+.bottom-content-note{
+    margin-top: 2ß0px;
+}
 
 .input{
     background-color: white;
@@ -187,13 +190,12 @@
     font-size: 36px;
 }
 .layer2{
-    margin-top: 200px;
+    margin-top: 400px;
 }
 .layer3{
-
 }
 .layer4{
-    margin-top: -50vw;
+    margin-top: -750px
 }
 .layer5{
     
@@ -386,5 +388,10 @@
     .layer5{
         margin-top: 300vh;
         height: 400px;
+    }
+}
+@media screen and (max-width: 449px) {
+    .layer3{
+        margin-top: 75vh;
     }
 }
