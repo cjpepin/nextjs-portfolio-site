@@ -19,12 +19,11 @@ const ContactMe = () => {
 
             formData[field.id] = field.value;
         })
+        console.log(formData);
         fetch('/api/mail', {
             method: 'post',
             body: JSON.stringify(formData),
         })
-        alert("Message sent!");
-        location.reload();
         
     }
     return(
