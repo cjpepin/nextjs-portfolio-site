@@ -8,10 +8,14 @@ const ContactMe = () => {
     const [content, setContent] = useState("");
 
     async function handleSubmit(e){
+        //Don't submit to browser
         e.preventDefault();
+        //Bots would probably put a second email, so if it is used, don't continue
         if(email2){
+            console.log("email2 used");
             return;
         }
+        
         const formData = {}
         Array.from(e.currentTarget.elements).forEach(field => {
             if(!field.value) return;

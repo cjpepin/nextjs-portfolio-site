@@ -12,12 +12,14 @@ export default function handler(req, res) {
   `;
 
   const data = {
-    to: 'cjpepin032@gmail.com',
-    from: 'hello@connorjpepin.com',
+    to: 'thorman00@gmail.com',
+    from: 'portfolioSite@connorjpepin.com',
     subject: `New message from ${body.name}`,
     text: message,
     html: message.replace(/\r\n/g, '<br>')
   }
+  console.log(mail)
   mail.send(data);
+  console.log(res.status)
   res.status(200).json({ status: 'Ok' })
 }

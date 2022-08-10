@@ -56,6 +56,8 @@
     display:flex;
     justify-content: flex-start;
     flex-direction: column;
+
+    background-color: #1c1c1c;
     
     height: 45vh;
     width: 20vw;
@@ -64,11 +66,19 @@
     min-height: 300;
     min-width: 500;
 
+    padding-left: 20px;
+    padding-right: 20px;
+
     margin-left: 25px;
     margin-right: 25px;
-    overflow-y: auto;
-    
 
+    border-radius: 4px;
+    overflow-y: auto;
+}
+
+.about-title{
+    font-size: 30px;
+    background-color: #1c1c1c;
 }
 
 .content{ 

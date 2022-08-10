@@ -30,7 +30,7 @@ const Project = (props) =>{
         <div className='project'>
             
             <div className="about" style={{order: order[0]}}>
-                <p style={{fontSize: '30px'}}>{title}:</p> {'\r\n'}
+                <p className="about-title">{title}:</p> {'\r\n'}
                     {text}
             </div>
             {content}
