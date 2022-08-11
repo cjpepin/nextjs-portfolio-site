@@ -98,7 +98,7 @@ const AboutMe = (props) => {
     
 
     return (
-    <div class="about-me-wrapper">
+    <div className="about-me-wrapper">
      <Parallax pages={3.15}>
         <ParallaxLayer
             className="layer1"
