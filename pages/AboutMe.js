@@ -98,12 +98,12 @@ const AboutMe = (props) => {
     
 
     return (
-    <>
-     <Parallax pages={4.5}>
+    <div class="about-me-wrapper">
+     <Parallax pages={3.15}>
         <ParallaxLayer
             className="layer1"
             style={{ width: '100%', height: '100%'}}
-            offset={0}
+            offset={0.1}
             speed={0.5}
             factor={1}>
             <Intro />
@@ -122,14 +122,19 @@ const AboutMe = (props) => {
                         <span className='skillset-title-content'>
                             Full Stack Development,
                             Data Science, and 
-                            starting Game Development
+                            Game Development
                         </span>
                         <p className='skillset-text'>
                             I am currently a senior working towards my Bachelors of Computer Science + Mathematics at Washington University 
-                            in St. Louis. My current interests include full stack development in HTML, Javascript (React/React Native), C#, and
-                            Python. I also have experience using MySQL and NoSQL database formats. Some of my more recent projects have 
-                            focussed on game development using Unity and C# and I have just started to dive into Unreal Engine 5 with C++.
-                            I have covered a wide array of what Software Engineering has to offer, and I am excited to keep learning new skills!
+                            in St. Louis. My current interests include full stack development using HTML, Javascript (React, React Native, Angular,
+                             and some Vue), C#, and
+                            Python. I also have experience using MySQL and NoSQL database formats such as MongoDB. 
+                            <br />
+                            <br />
+                            Some of my more recent projects have 
+                            focussed on game development using Unity and C#, a full stack (MongoDB, Angular, .Net) chat bot app I completed with a
+                             team of interns, as well as various projects attempting to continue to develop my best practices in React, Angular, and Vue.
+                            I have explored a wide array of what Software Engineering has to offer, and I am excited to keep learning new skills!
                         </p>
                     </div>
             </div>
@@ -246,13 +251,13 @@ const AboutMe = (props) => {
 
             offset={2.8}
             factor={0.5}
-            speed={2}
+            speed={2.5}
             >
             <ContactMe />
         </ParallaxLayer>
     </Parallax>
     
-    </>
+    </div>
     )
 }
 

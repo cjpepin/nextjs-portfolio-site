@@ -15,7 +15,7 @@ const ContactMe = () => {
             console.log("email2 used");
             return;
         }
-        
+
         const formData = {}
         Array.from(e.currentTarget.elements).forEach(field => {
             if(!field.value) return;
@@ -27,6 +27,12 @@ const ContactMe = () => {
         fetch('/api/mail', {
             method: 'post',
             body: JSON.stringify(formData),
+        }).then(res => {
+            console.log(res.status)
+            if(res.status == 200){
+                alert("Message has been sent!");
+                e.target.reset();
+            }
         })
         
     }

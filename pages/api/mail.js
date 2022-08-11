@@ -18,8 +18,10 @@ export default function handler(req, res) {
     text: message,
     html: message.replace(/\r\n/g, '<br>')
   }
-  console.log(mail)
-  mail.send(data);
-  console.log(res.status)
-  res.status(200).json({ status: 'Ok' })
+  mail.send(data)
+    .then(() => res.status(200).json({ status: 'Ok' }))
+    .catch(error => {
+      console.error(error);;
+    });
+  
 }
