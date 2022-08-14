@@ -91,12 +91,15 @@
     order:3;
 }
 .img-wrapper{
-    margin-left: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .me-img{
-    height: 300px;
-    width: 300px;
-    border-radius: 150px;
+    height: 18rem;
+    width: 18rem;
+    border-radius: 9rem;
     box-shadow: 3px 3px #262626;
 }
 
@@ -194,8 +197,9 @@
 }
 
 .contact-input{
-    font-size: 20px;
-    width: 350px;
+    font-size: 1.25rem;
+    max-width: 24rem;
+    min-width: 90vw;
 
 }
 #email-2{
@@ -402,12 +406,15 @@
 }
 @media screen and (max-width: 449px) {
     .layer2{
-        margin-top: 5rem;
+        margin-top: 8rem;
+    }
+    .layer3{
+        margin-top: 10rem;
     }
     .layer4{
-        margin-top: -55rem;
+        margin-top: -40rem;
     }
     .layer5{
-        margin-top: -10rem;
+        margin-top: 0rem;
     }
 }
