@@ -198,8 +198,8 @@
 
 .contact-input{
     font-size: 1.25rem;
-    max-width: 24rem;
-    min-width: 90vw;
+    width: 24rem;
+    max-width: 90vw;
 
 }
 #email-2{
@@ -210,12 +210,13 @@
     font-size: 36px;
 }
 .layer2{
-    margin-top: 400px;
+    margin-top: 20rem;
 }
 .layer3{
+    margin-top: -5rem;
 }
 .layer4{
-    margin-top: 48rem;
+    margin-top: -50rem;
 }
 .layer5{
     
@@ -266,7 +267,10 @@
         margin-right: 50px;
         min-width: 25vw;
     }
-    
+    .skillset-text{
+        max-height: 15rem;
+        overflow-y: scroll;
+    }
 
     .experience-wrapper{
         flex-direction: column;
@@ -299,7 +303,7 @@
     .content{ 
         margin:auto;
         margin-top: 25px;
-        max-width: 90vw;;
+        max-width: 90vw;
         object-fit: contain;
         order:1;
     }
@@ -406,10 +410,10 @@
 }
 @media screen and (max-width: 449px) {
     .layer2{
-        margin-top: 8rem;
+        margin-top: 15rem;
     }
     .layer3{
-        margin-top: 10rem;
+        margin-top: 5rem;
     }
     .layer4{
         margin-top: -40rem;
