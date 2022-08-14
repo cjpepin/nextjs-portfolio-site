@@ -8,7 +8,7 @@
 }
 
 .about-me-wrapper{
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .nav-body{
@@ -211,7 +211,7 @@
 .layer3{
 }
 .layer4{
-    margin-top: -750px
+    margin-top: 48rem;
 }
 .layer5{
     
@@ -230,7 +230,10 @@
     }
     .about{
         order:0;
+        max-height: 10rem;
     }
+
+    
     .me-body{
         flex-direction: column;
     }
@@ -296,18 +299,9 @@
         object-fit: contain;
         order:1;
     }
-    .layer2{
-        margin-top: 60vh;
-    }
-    .layer3{
-        margin-top: 50vh;
-    }
-    .layer4{
-        margin-top: 85vh;
-    }
+
     .layer5{
-        margin-top: 300vh;
-        height: 400px;
+        margin-top: 10vh;
     }
 }
 
@@ -366,7 +360,7 @@
         justify-content: center;
         flex-direction: column;
     }
-    .about{
+    /* .about{
         display:flex;
         justify-content: flex-start;
         flex-direction: column;
@@ -383,7 +377,7 @@
         overflow-y: auto;
         order:2;
     
-    }
+    } */
 
     .content{ 
         margin:auto;
@@ -392,7 +386,7 @@
         object-fit: contain;
         order:1;
     }
-    .layer2{
+    /* .layer2{
         margin-top: 60vh;
     }
     .layer3{
@@ -404,10 +398,16 @@
     .layer5{
         margin-top: 300vh;
         height: 400px;
-    }
+    } */
 }
 @media screen and (max-width: 449px) {
-    .layer3{
-        margin-top: 75vh;
+    .layer2{
+        margin-top: 5rem;
+    }
+    .layer4{
+        margin-top: -55rem;
+    }
+    .layer5{
+        margin-top: -10rem;
     }
 }
