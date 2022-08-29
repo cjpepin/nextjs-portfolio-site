@@ -2,10 +2,11 @@ import React, {useState} from 'react';
 const NavBar = () => {
 
     function handleButtonClick(e){
-        // if(e.target.id === "me")
-        //     window.location.href = "https://connorjpepin.com"
-        // else 
-        if(e.target.id === "pc")
+    console.log(e)
+
+        if(e.target.id === "me")
+            window.location.href = "https://connorjpepin.com"
+        else if(e.target.id === "pc")
             window.location.href = "https://cjpepin.github.io/lifting-chart/";
         else if(e.target.id === "pp")
             window.location.href = "https://powerprogress.herokuapp.com/"
@@ -17,24 +18,24 @@ const NavBar = () => {
 
     return (
         <div className='nav-body'>
-            <button id="me" className="nav-button">
+            <a href="/AboutMe" id="me" className="nav-button">
                 <p id="me">About</p>
-            </button>
-            <button onClick={handleButtonClick} id="pc" className="nav-button">
+            </a>
+            <a href="https://cjpepin.github.io/lifting-chart/" if="pc" className="nav-button">
                 <p id="pc">Powerlifting Chart</p>
-            </button>
+            </a>
 
-            <button onClick={handleButtonClick} id="pp" className="nav-button">
+            <a href="https://powerprogress.herokuapp.com/" id="pp" className="nav-button">
                 <p id="pp">PowerProgress</p>
-            </button>
+            </a>
 
-            <button onClick={handleButtonClick} id="ub" className="nav-button">
+            <a href="https://cjpepin.github.io/ungerbot-frontend" id="ub" className="nav-button">
                 <p id="ub">Ungerbot</p>
-            </button>
+            </a>
 
-            <button onClick={handleButtonClick} id="md" className="nav-button">
+            <a href="/MartianDefense" id="md" className="nav-button">
                 <p id="md">Martian Defense</p>
-            </button>
+            </a>
         </div>
     )
 }

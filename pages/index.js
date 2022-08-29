@@ -18,50 +18,55 @@ export default function Home() {
   }, [])
 
   function tabSelection(e){
-    if(e == "me"){
-      setBody(showTab(e));
-    }else if(e.target.id == "me" || e.target.id == "fd" || e.target.id == "dj" || e.target.id === "md"){
-      setBody(showTab(e.target.id));
-    }    
+    // console.log(e)
+
+    // // if(e == "me"){
+    // //   setBody(showTab(e));
+    // // }else 
+    // if(e.target.id == "me" || e.target.id == "fd" || e.target.id == "dj" || e.target.id === "md"){
+    //   setBody(showTab(e.target.id));
+    // }    
   }
   
   function showTab(tab){
-    if(tab == "me"){
-      setCurId("me");
-      return(
-        <AboutMe
-          id = "me"
-        />
-      )
-    }else if(tab == "md"){
-      setCurId("md");
-      return(
-        <MartianDefense
-          id = "md"
-        />
-      )
-    }
-    // } else if(tab == "fd"){
-    //   setCurId("fd");
+    // console.log(tab)
 
+    // if(tab == "me"){
+    //   setCurId("me");
     //   return(
-    //     <FlappyDog
-    //       id = "fd"
+    //     <AboutMe
+    //       id = "me"
     //     />
     //   )
-    // }else if(tab == "dj"){
-    //   setCurId("dj");
-
+    // }else if(tab == "md"){
+    //   setCurId("md");
     //   return(
-    //     <DoogleJump
-    //       id = "dj"
+    //     <MartianDefense
+    //       id = "md"
     //     />
     //   )
+    // }
+    // // } else if(tab == "fd"){
+    // //   setCurId("fd");
+
+    // //   return(
+    // //     <FlappyDog
+    // //       id = "fd"
+    // //     />
+    // //   )
+    // // }else if(tab == "dj"){
+    // //   setCurId("dj");
+
+    // //   return(
+    // //     <DoogleJump
+    // //       id = "dj"
+    // //     />
+    // //   )
   }
 
   return (
     <div className="all">
-      <NavBar className='nav' onClick={tabSelection}/>
+      <NavBar className='nav'/>
       <div className='tot-body'>
         <div className="container">
           {body}

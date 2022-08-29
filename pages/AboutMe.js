@@ -6,6 +6,7 @@ import Unity, {UnityContext} from 'react-unity-webgl';
 import Intro from './Intro';
 import Project from './Project';
 import ContactMe from './ContactMe'
+import NavBar from './Navbar';
 
 const AboutMe = (props) => {
     const alignCenter = { display: 'flex', alignItems: 'center' }
@@ -50,6 +51,7 @@ const AboutMe = (props) => {
 
     return (
     <div className="about-me-wrapper">
+        <NavBar />
      <Parallax pages={3.45}>
         <ParallaxLayer
             className="layer1"
