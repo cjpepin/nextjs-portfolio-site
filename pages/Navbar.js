@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import Link from 'next/link'
+
 const NavBar = () => {
 
     function handleButtonClick(e){
@@ -18,24 +20,24 @@ const NavBar = () => {
 
     return (
         <div className='nav-body'>
-            <a href="/AboutMe" id="me" className="nav-button">
+            <Link href="/AboutMe" id="me" className="nav-button">
                 <p id="me">About</p>
-            </a>
-            <a href="https://cjpepin.github.io/lifting-chart/" if="pc" className="nav-button">
+            </Link>
+            <Link href="https://cjpepin.github.io/lifting-chart/" if="pc" className="nav-button">
                 <p id="pc">Powerlifting Chart</p>
-            </a>
+            </Link>
 
-            <a href="https://powerprogress.herokuapp.com/" id="pp" className="nav-button">
+            <Link href="https://powerprogress.herokuapp.com/" id="pp" className="nav-button">
                 <p id="pp">PowerProgress</p>
-            </a>
+            </Link>
 
-            <a href="https://cjpepin.github.io/ungerbot-frontend" id="ub" className="nav-button">
+            <Link href="https://cjpepin.github.io/ungerbot-frontend" id="ub" className="nav-button">
                 <p id="ub">Ungerbot</p>
-            </a>
+            </Link>
 
-            <a href="/MartianDefense" id="md" className="nav-button">
+            <Link href="/MartianDefense" id="md" className="nav-button">
                 <p id="md">Martian Defense</p>
-            </a>
+            </Link>
         </div>
     )
 }
