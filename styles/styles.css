@@ -129,9 +129,9 @@
     align-items: center;
 }
 .unity{
-    height: 75vh;
+    height: 80vh;
     width: 75vw;
-    margin-top: 2vh;
+    margin-top: 8vh;
     margin-bottom: 8vh;
     object-fit:contain;
     padding:1.25rem;
@@ -209,6 +209,9 @@
 .contact-title{
     font-size: 36px;
 }
+.layer1{
+    margin-top: 2.5rem;
+}
 .layer2{
     margin-top: 20rem;
 }
@@ -216,10 +219,10 @@
     margin-top: -5rem;
 }
 .layer4{
-    margin-top: -50rem;
+    margin-top: -30rem;
 }
 .layer5{
-    
+    margin-top: -85rem;
 }
 
 @media only screen and (max-width: 800px){

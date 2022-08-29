@@ -4,6 +4,7 @@ import FlappyDog from './FlappyDog';
 import DoogleJump from './DoogleJump';
 
 import React, { useEffect, useState } from 'react';
+import MartianDefense from './MartianDefense';
 
 export default function Home() {
   // const [tab, setTab] = useState();
@@ -17,12 +18,9 @@ export default function Home() {
   }, [])
 
   function tabSelection(e){
-    console.log(e.target.id)
     if(e == "me"){
-      console.log('test1');
       setBody(showTab(e));
-    }else if(e.target.id == "me" || e.target.id == "fd" || e.target.id == "dj"){
-      console.log('test2');
+    }else if(e.target.id == "me" || e.target.id == "fd" || e.target.id == "dj" || e.target.id === "md"){
       setBody(showTab(e.target.id));
     }    
   }
@@ -35,23 +33,30 @@ export default function Home() {
           id = "me"
         />
       )
-    } else if(tab == "fd"){
-      setCurId("fd");
-
+    }else if(tab == "md"){
+      setCurId("md");
       return(
-        <FlappyDog
-          id = "fd"
-        />
-      )
-    }else if(tab == "dj"){
-      setCurId("dj");
-
-      return(
-        <DoogleJump
-          id = "dj"
+        <MartianDefense
+          id = "md"
         />
       )
     }
+    // } else if(tab == "fd"){
+    //   setCurId("fd");
+
+    //   return(
+    //     <FlappyDog
+    //       id = "fd"
+    //     />
+    //   )
+    // }else if(tab == "dj"){
+    //   setCurId("dj");
+
+    //   return(
+    //     <DoogleJump
+    //       id = "dj"
+    //     />
+    //   )
   }
 
   return (

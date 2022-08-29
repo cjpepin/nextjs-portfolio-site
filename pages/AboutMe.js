@@ -9,14 +9,18 @@ import ContactMe from './ContactMe'
 
 const AboutMe = (props) => {
     const alignCenter = { display: 'flex', alignItems: 'center' }
+    const [ubImg, setUbImg] = useState(0);
     const [plImg, setPlImg] = useState(0);
     const [gsImg, setGsImg] = useState(0);
     const [djImg, setDjImg] = useState(0);
     const [fdImg, setFdImg] = useState(0);
+    const [mdImg, setMdImg] = useState(0);
     const [name, setName] = useState();
+    const ubImgs = ['Login', 'CreateAccount', 'home2', 'FloorPlanner', 'admin', 'account2', 'account4'];
     const plImgs = ['login', 'front', 'chart', 'chart2'];
     const gsImgs = ['pointB','topic','yesNo','sentDist','kde','general','ethics1','ethics2'];
     const djImgs = ['Start', 'Play', 'Pause', 'Lose'];
+    const mdImgs = ['Start', 'Play', 'Pause', 'Lose'];
     const fdImgs = ['Start', 'Play', 'Pause', 'Lose'];
     // const [width, setWidth] = useState(window.innerHeight)
     // var fs = require('fs')
@@ -26,72 +30,19 @@ const AboutMe = (props) => {
     // window.addEventListener('resize', console.log(window.innerHeight));
 
 
-    function changeImage(imgsToUse, add){
-        if(imgsToUse == plImgs){
-            const curInd = imgsToUse.indexOf(imgsToUse[plImg])
-            if(add){
-                if(curInd == imgsToUse.length - 1){
-                    setPlImg(0);
-                }else{
-                    setPlImg(curInd + 1);
-                }
+    function changeImage(imgsToUse, add, setter, curImg){
+        const curInd = imgsToUse.indexOf(imgsToUse[curImg])
+        if(add){
+            if(curInd == imgsToUse.length - 1){
+                setter(0);
             }else{
-
-                if(curInd == 0){
-                    setPlImg(imgsToUse.length - 1);
-                }else{
-                    setPlImg(curInd - 1);
-                }
+                setter(curInd + 1);
             }
-        }else if(imgsToUse == gsImgs){
-            const curInd = imgsToUse.indexOf(imgsToUse[gsImg])
-            if(add){
-                if(curInd == imgsToUse.length - 1){
-                    setGsImg(0);
-                }else{
-                    setGsImg(curInd + 1);
-                }
+        }else{
+            if(curInd == 0){
+                setter(imgsToUse.length - 1);
             }else{
-
-                if(curInd == 0){
-                    setGsImg(imgsToUse.length - 1);
-                }else{
-                    setGsImg(curInd - 1);
-                }
-            }
-        }else if(imgsToUse == djImgs){
-            const curInd = imgsToUse.indexOf(imgsToUse[djImg])
-            if(add){
-                if(curInd == imgsToUse.length - 1){
-                    setDjImg(0);
-
-                }else{
-                    setDjImg(curInd + 1);
-                }
-            }else{
-
-                if(curInd == 0){
-                    setDjImg(imgsToUse.length - 1);
-                }else{
-                    setDjImg(curInd - 1);
-                }
-            }
-        }else if(imgsToUse == fdImgs){
-            const curInd = imgsToUse.indexOf(imgsToUse[fdImg])
-            if(add){
-                if(curInd == imgsToUse.length - 1){
-                    
-                    setFdImg(0);
-                }else{
-                    setFdImg(curInd + 1);
-                }
-            }else{
-
-                if(curInd == 0){
-                    setFdImg(imgsToUse.length - 1);
-                }else{
-                    setFdImg(curInd - 1);
-                }
+                setter(curInd - 1);
             }
         }
     }
@@ -99,11 +50,11 @@ const AboutMe = (props) => {
 
     return (
     <div className="about-me-wrapper">
-     <Parallax pages={3.15}>
+     <Parallax pages={3.45}>
         <ParallaxLayer
             className="layer1"
             style={{ width: '100%', height: '100%'}}
-            offset={0.1}
+            offset={0}
             speed={0.5}
             factor={1}>
             <Intro />
@@ -149,12 +100,37 @@ const AboutMe = (props) => {
             <div className="experience-wrapper">
                 <span className="projects-title" >Projects</span>
                 
-                <div className="content-block" onClick={(e) => {
+                <div className="content-block" 
+                        onClick={(e) => {
                         if(e.target.className == 'content'){
-                            changeImage(plImgs, true)}}
+                            changeImage(ubImgs, true, setUbImg, ubImg)}}
                         }>
                     <Project 
                         ind={1}
+                        title="Ungerbot"
+                        text={`Ungerbot the main project I spent my summer working on with a group of two other interns at Ungerboeck
+                        Software International. My position on the project was primary as a frontend developer, learning Angular 
+                        and designing/creating a website that would house a chat bot that could recommend products to customers
+                        based on a machine learning model and user input. Along with the client facing development, I also had several 
+                        opportunities to dip my toes into the MongoDB/C# backend as well to create/connect api endpoints.
+                        During the process, I decided that I wanted to include my
+                        interest of 3D graphics development, so I included a very simple version of a 3D floor planner using 
+                        ThreeJS as a sort of proof of concept to see how feasible it is to create complex models in javascript/
+                        typsecript. This summer ended up being my most valuable learning opportunity yet, with new experiences developing
+                        a full stack application with a team while also gainins insight on the processes of creating enterprise applications.`}
+                        imgSrc={`./UngerbotPics/${ubImgs[ubImg]}.png`}
+                    />
+                    
+                </div>
+                <p className='bottom-content-note'>Link: <a href="https://cjpepin.github.io/ungerbot-frontend">UngerBot</a> </p>
+
+
+                <div className="content-block" onClick={(e) => {
+                        if(e.target.className == 'content'){
+                            changeImage(plImgs, true, setPlImg, plImg)}}
+                        }>
+                    <Project 
+                        ind={2}
                         title="Power Progress"
                         text={`Power Progress started as a final project for one of my creative programming classes. One of the challenges
                                 of the project was to find two new technologies in frontend/backend/framework to use that we hadn't seen 
@@ -174,10 +150,10 @@ const AboutMe = (props) => {
                 <div className="content-block" 
                         onClick={(e) => {
                         if(e.target.className == 'content'){
-                            changeImage(gsImgs, true)}}
+                            changeImage(gsImgs, true, setGsImg, gsImg)}}
                         }>
                     <Project 
-                        ind={2}
+                        ind={3}
                         title="Gradescope Sentiment Parser"
                         text={`The Gradescope Sentiment Parser was a project I started as a Teaching Assistant for our Introduction to Data Science class.
                                 The professor offered the opportunity to give feedback in Gradescope quizzes at the end of each weekly "lab", but reading through
@@ -192,9 +168,7 @@ const AboutMe = (props) => {
                                 sentiment distribution across semesters to see semester wide sentiments.`}
                         imgSrc={`./GradescopeParser/${gsImgs[gsImg]}.png`}
                     />
-                    
                 </div>
-
             </div>
         </ParallaxLayer>
         <ParallaxLayer 
@@ -209,10 +183,28 @@ const AboutMe = (props) => {
                 <div className='content-block'
                     onClick={(e) => {
                         if(e.target.className == 'content'){
-                            changeImage(fdImgs, true)}}
+                            changeImage(mdImgs, true, setMdImg, mdImg)}}
                     }>
                     <Project 
                         ind={1}
+                        title="Martian Defense"
+                        text="I am very interested in VR development and thought some version of an FPS shooter would be 
+                        a great way to practice these skills. After a summer of frontend development, I gave myself 5 days to
+                        relearn Unity and try to put together some kind of playable game. The version deployed to my website is
+                        the PC version, and the VR version should be available sometime in the near future!"
+                        imgSrc={`./MartianDefensePics/${mdImgs[mdImg]}.png`}
+                    />
+                </div>
+                <p className='bottom-content-note'>Link: <a href="https://connorjpepin.com/MartianDefense">Martian Defense</a></p>
+
+
+                <div className='content-block'
+                    onClick={(e) => {
+                        if(e.target.className == 'content'){
+                            changeImage(fdImgs, true, setFdImg, fdImg)}}
+                    }>
+                    <Project 
+                        ind={2}
                         title="Flappy Bird Clone"
                         text="I wanted to start learning Unity because I thought game development would be the perfect combination for my 
                                 school experience, CS + Math, and it seemed like it would be fun. After spending several weeks trying to follow
@@ -230,10 +222,10 @@ const AboutMe = (props) => {
                     className="content-block"
                     onClick={(e) => {
                         if(e.target.className == 'content'){
-                            changeImage(djImgs, true)}}
+                            changeImage(djImgs, true, setDjImg, djImg)}}
                     } >
                     <Project 
-                        ind={2}
+                        ind={3}
                         title="Doodle Jump Clone"
                         text="After completing Flappy Dog, I wanted to find another Unity project that would be similar, but provide new challenges. The 
                                 game still has a relatively similar level design, with a start menu, gameplay screen, and pause screen, but now has some 
@@ -249,7 +241,7 @@ const AboutMe = (props) => {
         <ParallaxLayer 
             className="layer5"
 
-            offset={2.8}
+            offset={3}
             factor={0.5}
             speed={2.5}
             >
