@@ -2,15 +2,16 @@ import React, {useState} from 'react';
 const NavBar = () => {
 
     function handleButtonClick(e){
-        if(e.target.id === "me")
-            window.location.href = "https://connorjpepin.com"
-        else if(e.target.id === "pc")
+        // if(e.target.id === "me")
+        //     window.location.href = "https://connorjpepin.com"
+        // else 
+        if(e.target.id === "pc")
             window.location.href = "https://cjpepin.github.io/lifting-chart/";
         else if(e.target.id === "pp")
             window.location.href = "https://powerprogress.herokuapp.com/"
-        else if(e.target.id === "md")
-            window.location.href = "https://connorjpepin.com/MartianDefense"
-        else if(e.target.id === "md")
+        // else if(e.target.id === "md")
+        //     window.location.href = "https://connorjpepin.com/MartianDefense"
+        else if(e.target.id === "ub")
             window.location.href = "https://cjpepin.github.io/ungerbot-frontend"
     }
 
