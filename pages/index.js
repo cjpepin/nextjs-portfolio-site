@@ -61,7 +61,7 @@ export default function Home() {
 
   return (
     <div className="all">
-      <NavBar className='nav' onClick={tabSelection}/>
+      <NavBar className='nav'/>
       <div className='tot-body'>
         <div className="container">
           {body}
