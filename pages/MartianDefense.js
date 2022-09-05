@@ -2,12 +2,12 @@ import { Parallax, ParallaxLayer } from "@react-spring/parallax"
 import Unity, {UnityContext} from "react-unity-webgl"
 import NavBar from "./Navbar";
 const MartianDefense = () => {
-
+    console.log("running")
     const unityContextMD = new UnityContext({
-        loaderUrl: "./MartianDefenseWebGL_v1.0.0/Build/MartianDefenseWebGL_v1.0.0.loader.js",
-        dataUrl: "MartianDefenseWebGL_v1.0.0/Build/MartianDefenseWebGL_v1.0.0.data",
-        frameworkUrl: "MartianDefenseWebGL_v1.0.0/Build/MartianDefenseWebGL_v1.0.0.framework.js",
-        codeUrl: "MartianDefenseWebGL_v1.0.0/Build/MartianDefenseWebGL_v1.0.0.wasm",
+        loaderUrl: "./MartianDefenseGame/Build/MartianDefenseWebGL_v1.0.3.loader.js",
+        dataUrl: "MartianDefenseGame/Build/MartianDefenseWebGL_v1.0.3.data",
+        frameworkUrl: "MartianDefenseGame/Build/MartianDefenseWebGL_v1.0.3.framework.js",
+        codeUrl: "MartianDefenseGame/Build/MartianDefenseWebGL_v1.0.3.wasm",
     });
     return (
         <>

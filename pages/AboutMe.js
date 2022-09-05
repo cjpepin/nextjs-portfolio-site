@@ -81,7 +81,7 @@ const AboutMe = (props) => {
                             I am currently a senior working towards my Bachelors of Computer Science + Mathematics at Washington University 
                             in St. Louis. My current interests include full stack development using HTML, Javascript (React, React Native, Angular,
                              and some Vue), C#, and
-                            Python. I also have experience using MySQL and NoSQL database formats such as MongoDB. 
+                            Python. I also have experience using SQL and NoSQL database formats such as MongoDB. 
                             <br />
                             <br />
                             Some of my more recent projects have 
@@ -110,16 +110,16 @@ const AboutMe = (props) => {
                     <Project 
                         ind={1}
                         title="Ungerbot"
-                        text={`Ungerbot the main project I spent my summer working on with a group of two other interns at Ungerboeck
-                        Software International. My position on the project was primary as a frontend developer, learning Angular 
-                        and designing/creating a website that would house a chat bot that could recommend products to customers
-                        based on a machine learning model and user input. Along with the client facing development, I also had several 
+                        text={`Ungerbot was the main project I spent my summer working on with a group of two other interns at Ungerboeck
+                        Software International. My position on the project was primary as a frontend developer, learning Angular
+                        and designing/creating a website that would house a chatbot that could recommend products to customers
+                        based on a machine learning model and user input. Along with the client facing development, I also had several
                         opportunities to dip my toes into the MongoDB/C# backend as well to create/connect api endpoints.
                         During the process, I decided that I wanted to include my
-                        interest of 3D graphics development, so I included a very simple version of a 3D floor planner using 
-                        ThreeJS as a sort of proof of concept to see how feasible it is to create complex models in javascript/
-                        typsecript. This summer ended up being my most valuable learning opportunity yet, with new experiences developing
-                        a full stack application with a team while also gainins insight on the processes of creating enterprise applications.`}
+                        interest of 3D graphics development, so I included a very simple version of a 3D floor planner using
+                        ThreeJS as a sort of proof of concept to see how feasible it is to create complex models in Javascript/
+                        Typescript. This summer ended up being my most valuable learning opportunity yet, with new experiences developing
+                        a full stack application with a team while also gaining insight on the processes of creating enterprise applications.`}
                         imgSrc={`./UngerbotPics/${ubImgs[ubImg]}.png`}
                     />
                     
@@ -135,14 +135,14 @@ const AboutMe = (props) => {
                         ind={2}
                         title="Power Progress"
                         text={`Power Progress started as a final project for one of my creative programming classes. One of the challenges
-                                of the project was to find two new technologies in frontend/backend/framework to use that we hadn't seen 
-                                previously in class. Since we hadn't spent any time looking at NoSQL databases, nor had we looked at React.js,
-                                I ended up inadvertantly falling into developing a MERN stack application. Once I had completed the requirements
-                                for the project, I decided to keep working on it to add functionality that would make it an actually user-frieldy
-                                application. The end goal was to design a product that allowed a lifter, specifically a powerlifter, to input their
-                                programming spreadsheet for each training period (block) and be able to see visually how they were progressing over time.
-                                This resource would benefit a lifter and a coaches ability to over time see how different styles of programming may
-                                benefit or hurt the lifter's progress.`}
+                        of the project was to find two new technologies in frontend/backend framework to use that we hadn't seen
+                        previously in class. Since we hadn't spent any time looking at NoSQL databases, nor had we looked at React.js,
+                        I ended up inadvertently falling into developing a MERN stack application. Once I had completed the requirements
+                        for the project, I decided to keep working on it to add functionality that would make it an actually user-friendly
+                        app. The end goal was to design a product that allowed a lifter, more specifically a powerlifter, to input their
+                        programming spreadsheet for each training period (block) and be able to see visually how they were progressing over time.
+                        This resource would benefit a lifter and a coaches ability to over time see how different styles of programming may
+                        benefit or hurt the lifter's progress.`}
                         imgSrc={`./PowerProgressPics/${plImgs[plImg]}.png`}
                      />
                 </div>
@@ -158,16 +158,16 @@ const AboutMe = (props) => {
                         ind={3}
                         title="Gradescope Sentiment Parser"
                         text={`The Gradescope Sentiment Parser was a project I started as a Teaching Assistant for our Introduction to Data Science class.
-                                The professor offered the opportunity to give feedback in Gradescope quizzes at the end of each weekly "lab", but reading through
-                                the poorly formatted responses without any technological assistance was a great challenge. I spent the entirety of the the first 
-                                semester creating functions that would help to read in the data, calculate a sentiment score using a python package called VADER 
-                                Sentiment Analyzer, and organize text responses my prediceted sentiment score. The following semester I continued my project as an
-                                independent study and by the end had created 5 primary "solutions" in an attempt to make analyzing the student feedback more managable.
-                                The first picture shows a point biserial correlation with a distribution histogram, where we see both whether Yes/No the student liked
-                                the lab (x axis) and their calculated sentiment score based on their feedback (y axis). Next is a word/topic frequency parser that tries
-                                to find the most frequent words/topics and uses a character bound to the left and right to estimate if the word is generally used
-                                positively or negatively. Next are two bar charts that show for each lab 1. If the student yes/no enjoyed the lab, and 2. the average
-                                sentiment distribution across semesters to see semester wide sentiments.`}
+                        The professor offered the opportunity to give feedback in Gradescope quizzes at the end of each weekly "lab", but reading through
+                        the poorly formatted responses without any way to parse through the data was a great challenge. I spent the entirety of the the first
+                        semester creating functions that would help to read in the data, calculate a sentiment score using a python package called VADER
+                        Sentiment Analyzer, and organize text responses based on predicted sentiment score. The following semester I continued my project as an
+                        independent study and by the end had created 5 primary "solutions" in an attempt to make analyzing the student feedback more manageable.
+                        The first picture shows a point biserial correlation with a distribution histogram, where we see both whether Yes/No the student liked
+                        the lab (x axis) and their calculated sentiment score based on their feedback (y axis). Next is a word/topic frequency parser that tries
+                        to find the most frequent words/topics and uses a character bound to the left and right to estimate if the word is generally used
+                        positively or negatively. Next are two bar charts that show for each lab 1. If the student yes/no enjoyed the lab, and 2. the average
+                        sentiment distribution across semesters to see semester wide sentiments.`}
                         imgSrc={`./GradescopeParser/${gsImgs[gsImg]}.png`}
                     />
                 </div>
@@ -190,7 +190,7 @@ const AboutMe = (props) => {
                     <Project 
                         ind={1}
                         title="Martian Defense"
-                        text="I am very interested in VR development and thought some version of an FPS shooter would be 
+                        text="I am very interested in VR development, and thought some version of an FPS shooter would be 
                         a great way to practice these skills. After a summer of frontend development, I gave myself 5 days to
                         relearn Unity and try to put together some kind of playable game. The version deployed to my website is
                         the PC version, and the VR version should be available sometime in the near future!"
@@ -229,10 +229,10 @@ const AboutMe = (props) => {
                     <Project 
                         ind={3}
                         title="Doodle Jump Clone"
-                        text="After completing Flappy Dog, I wanted to find another Unity project that would be similar, but provide new challenges. The 
-                                game still has a relatively similar level design, with a start menu, gameplay screen, and pause screen, but now has some 
-                                additional elements like adjutable volume, and different gameplay mechanics, like interaction with world objects, sound effects
-                                and camera changes."
+                        text="After completing Flappy Dog, I wanted to find another Unity project that would be similar, but provide new challenges. The
+                        game still has a relatively similar level design, with a start menu, gameplay screen, and pause screen, but now has some
+                        additional elements like adjustable volume, and different gameplay mechanics, like interaction with world objects, sound effects
+                        and camera changes."
                         imgSrc={`./DoogleJumpPics/${djImgs[djImg]}.png`}
                     />
                 </div>
