@@ -6,9 +6,16 @@
     color: white;
     
 }
+.app{
+    overflow: hidden;
+}
 
 .about-me-wrapper{
+
     overflow: scroll;
+}
+.about-me{
+    margin-top: 4rem;
 }
 
 .nav-body{
@@ -17,6 +24,7 @@
     align-items: center;
     justify-content: space-evenly;
     position: fixed;
+    flex-wrap: wrap;
     margin-top: -1vh;
     
     min-height: 8vh;
@@ -240,7 +248,7 @@
     margin-top: -30rem;
 }
 .layer5{
-    margin-top: -85rem;
+    margin-top: -90rem;
 }
 
 @media only screen and (max-width: 800px){
@@ -252,6 +260,7 @@
         align-items: center;
         flex-direction: column;
         width: 90vw;
+        margin-top: 4rem;
 
     }
     .about{
@@ -330,7 +339,7 @@
     }
 
     .layer5{
-        margin-top: 10vh;
+        margin-top: -90rem;
     }
 }
 

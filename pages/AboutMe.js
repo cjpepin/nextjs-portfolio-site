@@ -52,7 +52,7 @@ const AboutMe = (props) => {
     return (
     <div className="about-me-wrapper">
         <NavBar />
-     <Parallax pages={3.45}>
+     <Parallax pages={3.49}>
         <ParallaxLayer
             className="layer1"
             style={{ width: '100%', height: '100%'}}
