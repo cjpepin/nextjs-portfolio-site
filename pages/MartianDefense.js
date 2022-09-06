@@ -4,10 +4,10 @@ import NavBar from "./Navbar";
 const MartianDefense = () => {
     console.log("running")
     const unityContextMD = new UnityContext({
-        loaderUrl: "./MartianDefenseGame/Build/MartianDefenseWebGL_v1.0.3.loader.js",
-        dataUrl: "MartianDefenseGame/Build/MartianDefenseWebGL_v1.0.3.data",
-        frameworkUrl: "MartianDefenseGame/Build/MartianDefenseWebGL_v1.0.3.framework.js",
-        codeUrl: "MartianDefenseGame/Build/MartianDefenseWebGL_v1.0.3.wasm",
+        loaderUrl: "./MartianDefenseGame/Build/MartianDefenseWebGL_v1.0.4.loader.js",
+        dataUrl: "MartianDefenseGame/Build/MartianDefenseWebGL_v1.0.4.data",
+        frameworkUrl: "MartianDefenseGame/Build/MartianDefenseWebGL_v1.0.4.framework.js",
+        codeUrl: "MartianDefenseGame/Build/MartianDefenseWebGL_v1.0.4.wasm",
     });
     return (
         <>
