@@ -10,8 +10,10 @@
     overflow: hidden;
 }
 
-.about-me-wrapper{
+.tot-body{
 
+}
+.about-me-wrapper{
     overflow: scroll;
 }
 .about-me{
@@ -46,8 +48,12 @@
     min-height: 8vh;
     width: 100%;
     cursor: pointer;
-
     z-index: 10;
+}
+
+.nav-body p{
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
 
 .nav-button{
@@ -111,12 +117,26 @@
     background-color: #1c1c1c;
 }
 
+.img-container{
+    position: relative;
+}
+
 .content{ 
     margin:auto;
     max-width: 40vw;
     object-fit: contain;
     order:3;
 }
+
+.click-me{
+    font-size: 0.6em;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+}
+
 .img-wrapper{
     display: flex;
     flex-direction: column;
@@ -173,6 +193,7 @@
     margin-top: 1.5rem;
 }
 .skillset-title{
+
     font-size: 2.5rem;
 }
 .skillset-title-content{
@@ -195,6 +216,8 @@
     justify-content: center;
     flex-direction: row;
 }
+
+
 
 .skills{
     margin-left: 8vw;
@@ -239,19 +262,19 @@
     font-size: 36px;
 }
 .layer1{
-    margin-top: 2.5rem;
+    margin-top: 2rem;
 }
 .layer2{
-    margin-top: 20rem;
+    margin-top: 10rem;
 }
 .layer3{
-    margin-top: -5rem;
+    margin-top: -15rem;
 }
 .layer4{
     margin-top: -30rem;
 }
 .layer5{
-    margin-top: -90rem;
+    margin-top: -5rem;
 }
 
 @media only screen and (max-width: 800px){
@@ -340,9 +363,20 @@
         object-fit: contain;
         order:1;
     }
-
+    .layer1{
+        margin-top: 2rem;
+    }
+    .layer2{
+        margin-top: 10rem;
+    }
+    .layer3{
+        margin-top: -5rem;
+    }
+    .layer4{
+        margin-top: 5rem;
+    }
     .layer5{
-        margin-top: -90rem;
+        margin-top: -5rem;
     }
 }
 
@@ -428,30 +462,29 @@
         order:1;
     }
     /* .layer2{
-        margin-top: 60vh;
+        margin-top: 10rem;
     }
     .layer3{
-        margin-top: 50vh;
+        margin-top: -15rem;
     }
     .layer4{
-        margin-top: 85vh;
+        margin-top: -15rem;
     }
     .layer5{
-        margin-top: 300vh;
-        height: 400px;
+        margin-top: -70rem;
     } */
 }
 @media screen and (max-width: 449px) {
-    .layer2{
+    /* .layer2{
         margin-top: 15rem;
     }
     .layer3{
-        margin-top: 5rem;
+        margin-top: -10rem;
     }
     .layer4{
-        margin-top: -40rem;
+        margin-top: -30rem;
     }
     .layer5{
-        margin-top: 0rem;
-    }
+        margin-top: -70rem;
+    } */
 }

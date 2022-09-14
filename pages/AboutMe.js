@@ -10,6 +10,7 @@ import NavBar from './Navbar';
 
 const AboutMe = (props) => {
     const alignCenter = { display: 'flex', alignItems: 'center' }
+    const [pageNums, setPageNums] = useState(3.5);
     const [ubImg, setUbImg] = useState(0);
     const [plImg, setPlImg] = useState(0);
     const [gsImg, setGsImg] = useState(0);
@@ -29,7 +30,38 @@ const AboutMe = (props) => {
     // console.log(files);
 
     // window.addEventListener('resize', console.log(window.innerHeight));
+    function debounce(fn, ms) {
+        let timer
+        return _ => {
+          clearTimeout(timer)
+          timer = setTimeout(_ => {
+            timer = null
+            fn.apply(this, arguments)
+          }, ms)
+        };
+      }
 
+    useEffect(() => {
+        const debounceFunc = debounce(
+            function handleResize(e){
+                if(window.innerWidth <= 800)
+                    setPageNums(10);
+                else if(window.innerWidth > 800)
+                    setPageNums(3.5);
+
+                
+                console.log(pageNums)
+            },
+            100
+        );
+        
+        window.addEventListener('resize', debounceFunc);
+
+        return _ => {
+            window.removeEventListener('resize', debounceFunc)
+        }
+        
+    } )
 
     function changeImage(imgsToUse, add, setter, curImg){
         const curInd = imgsToUse.indexOf(imgsToUse[curImg])
@@ -52,21 +84,21 @@ const AboutMe = (props) => {
     return (
     <div className="about-me-wrapper">
         <NavBar />
-     <Parallax pages={3.49}>
+     <Parallax pages={3.9}>
         <ParallaxLayer
             className="layer1"
             style={{ width: '100%', height: '100%'}}
             offset={0}
             speed={0.5}
-            factor={1}>
+            factor={0.5}>
             <Intro />
         </ParallaxLayer>
 
         <ParallaxLayer
             className="layer2"
 
-            offset={0.9}
-            factor={0.25}
+            offset={0.99}
+            factor={0}
             speed={1}
             >
             <div className='skills'>
@@ -96,7 +128,7 @@ const AboutMe = (props) => {
             className="layer3"
 
             offset={1}
-            factor={0.5}
+            factor={1}
             speed={1.5}
             >
             <div className="experience-wrapper">
@@ -104,8 +136,10 @@ const AboutMe = (props) => {
                 
                 <div className="content-block" 
                         onClick={(e) => {
-                        if(e.target.className == 'content'){
-                            changeImage(ubImgs, true, setUbImg, ubImg)}}
+                        if(e.target.className == 'content' || e.target.className == "click-me"){
+                            changeImage(ubImgs, true, setUbImg, ubImg)
+                            e.target.hasBeenClicked = true;
+                        }}
                         }>
                     <Project 
                         ind={1}
@@ -121,6 +155,7 @@ const AboutMe = (props) => {
                         Typescript. This summer ended up being my most valuable learning opportunity yet, with new experiences developing
                         a full stack application with a team while also gaining insight on the processes of creating enterprise applications.`}
                         imgSrc={`./UngerbotPics/${ubImgs[ubImg]}.png`}
+                        hasBeenClicked={false}
                     />
                     
                 </div>
@@ -128,8 +163,12 @@ const AboutMe = (props) => {
 
 
                 <div className="content-block" onClick={(e) => {
-                        if(e.target.className == 'content'){
-                            changeImage(plImgs, true, setPlImg, plImg)}}
+                        if(e.target.className == 'content' || e.target.className == "click-me"){
+                            changeImage(plImgs, true, setPlImg, plImg);
+                            e.target.hasBeenClicked = true;
+                        }
+                        
+                        }
                         }>
                     <Project 
                         ind={2}
@@ -144,6 +183,8 @@ const AboutMe = (props) => {
                         This resource would benefit a lifter and a coaches ability to over time see how different styles of programming may
                         benefit or hurt the lifter's progress.`}
                         imgSrc={`./PowerProgressPics/${plImgs[plImg]}.png`}
+                        hasBeenClicked={false}
+
                      />
                 </div>
                 <p className='bottom-content-note'>Link: <a href="http://powerprogress.herokuapp.com/">PowerProgress</a> </p>
@@ -151,8 +192,11 @@ const AboutMe = (props) => {
 
                 <div className="content-block" 
                         onClick={(e) => {
-                        if(e.target.className == 'content'){
-                            changeImage(gsImgs, true, setGsImg, gsImg)}}
+                        if(e.target.className == 'content' || e.target.className == "click-me"){
+                            changeImage(gsImgs, true, setGsImg, gsImg)}
+                            e.target.hasBeenClicked = true;
+                        }
+                        
                         }>
                     <Project 
                         ind={3}
@@ -169,6 +213,7 @@ const AboutMe = (props) => {
                         positively or negatively. Next are two bar charts that show for each lab 1. If the student yes/no enjoyed the lab, and 2. the average
                         sentiment distribution across semesters to see semester wide sentiments.`}
                         imgSrc={`./GradescopeParser/${gsImgs[gsImg]}.png`}
+                        hasBeenClicked={false}
                     />
                 </div>
             </div>
@@ -184,8 +229,10 @@ const AboutMe = (props) => {
 
                 <div className='content-block'
                     onClick={(e) => {
-                        if(e.target.className == 'content'){
-                            changeImage(mdImgs, true, setMdImg, mdImg)}}
+                        if(e.target.className == 'content' || e.target.className == "click-me"){
+                            changeImage(mdImgs, true, setMdImg, mdImg)
+                            e.target.hasBeenClicked = true;
+                        }}
                     }>
                     <Project 
                         ind={1}
@@ -195,6 +242,8 @@ const AboutMe = (props) => {
                         relearn Unity and try to put together some kind of playable game. The version deployed to my website is
                         the PC version, and the VR version should be available sometime in the near future!"
                         imgSrc={`./MartianDefensePics/${mdImgs[mdImg]}.png`}
+                        hasBeenClicked={false}
+
                     />
                 </div>
                 <p className='bottom-content-note'>Link: <a href="https://connorjpepin.com/MartianDefense">Martian Defense</a></p>
@@ -202,8 +251,10 @@ const AboutMe = (props) => {
 
                 <div className='content-block'
                     onClick={(e) => {
-                        if(e.target.className == 'content'){
-                            changeImage(fdImgs, true, setFdImg, fdImg)}}
+                        if(e.target.className == 'content' || e.target.className == "click-me"){
+                            changeImage(fdImgs, true, setFdImg, fdImg);
+                            e.target.hasBeenClicked = true;
+                        }}
                     }>
                     <Project 
                         ind={2}
@@ -216,6 +267,8 @@ const AboutMe = (props) => {
                                 I was extremely happy with how it ended up working after working through learning how to use 3D vectors to position
                                 elements. This ended up being a very fun game and entertaining to show to others."
                         imgSrc={`./FlappyDogPics/${fdImgs[fdImg]}.png`}
+                        hasBeenClicked={false}
+
                     />
                 </div>
                 <p className='bottom-content-note'>Browser playable version coming soon!</p>
@@ -223,8 +276,10 @@ const AboutMe = (props) => {
                 <div 
                     className="content-block"
                     onClick={(e) => {
-                        if(e.target.className == 'content'){
-                            changeImage(djImgs, true, setDjImg, djImg)}}
+                        if(e.target.className == 'content' || e.target.className == "click-me"){
+                            changeImage(djImgs, true, setDjImg, djImg);
+                            e.target.hasBeenClicked = true;
+                        }}
                     } >
                     <Project 
                         ind={3}
@@ -234,6 +289,8 @@ const AboutMe = (props) => {
                         additional elements like adjustable volume, and different gameplay mechanics, like interaction with world objects, sound effects
                         and camera changes."
                         imgSrc={`./DoogleJumpPics/${djImgs[djImg]}.png`}
+                        hasBeenClicked={false}
+
                     />
                 </div>
                 <p className='bottom-content-note'>Browser playable version coming soon!</p>
@@ -244,7 +301,7 @@ const AboutMe = (props) => {
             className="layer5"
 
             offset={3}
-            factor={0.5}
+            factor={1}
             speed={2.5}
             >
             <ContactMe />
