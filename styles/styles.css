@@ -25,31 +25,18 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    position: fixed;
+    position: relative;
     top: 0.5rem;
     flex-wrap: wrap;
     margin-top: -1vh;
-    
-    min-height: 8vh;
+
+    min-height: 2.5vh;
     width: 100%;
     cursor: pointer;
 
     z-index: 10;
 }
 
-.nav-body{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    position: fixed;
-    margin-top: -1vh;
-    
-    min-height: 8vh;
-    width: 100%;
-    cursor: pointer;
-    z-index: 10;
-}
 
 .nav-body p{
     padding-left: 0.5rem;
@@ -73,7 +60,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20vh;
+    margin-top: 15rem;
 }
 
 .about-me{
@@ -279,7 +266,7 @@
 
 @media only screen and (max-width: 800px){
     .me-body{
-        margin-top: -50px;
+        margin-top: -8rem;
     }
     .about-me{
         display:flex;
@@ -381,9 +368,7 @@
 }
 
 @media only screen and (max-width: 700px){
-    .me-body{
-        margin-top: -50px;
-    }
+
     .about-me{
         display:flex;
         align-items: center;
