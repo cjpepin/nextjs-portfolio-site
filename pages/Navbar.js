@@ -20,7 +20,7 @@ const NavBar = () => {
 
     return (
         <div className='nav-body'>
-            <Link href="/AboutMe" id="me" className="nav-button">
+            <Link href="/" id="me" className="nav-button">
                 <p id="me">About</p>
             </Link>
             <Link href="https://cjpepin.github.io/lifting-chart/" if="pc" className="nav-button">

@@ -11,11 +11,9 @@ export default function Home() {
   const [body, setBody] = useState("me");
   const [curId, setCurId] = useState("me")
 
-  useEffect(() => {
-    setBody( <AboutMe
-              id = "me"
-            />)
-  }, [])
+  // useEffect(() => {
+  //   setBody( )
+  // }, [])
 
   function tabSelection(e){
     // console.log(e)
@@ -69,7 +67,9 @@ export default function Home() {
       <NavBar className='nav'/>
       <div className='tot-body'>
         <div className="container">
-          {body}
+        <AboutMe
+              id = "me"
+            />
         </div>
       </div>
     </div>
